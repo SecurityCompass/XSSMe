@@ -1,0 +1,9 @@
+content	xssme	content/
+locale	xssme	en-US	locale/en-US/
+skin	xssme	classic/1.0	skin/
+overlay	chrome://browser/content/browser.xul	chrome://xssme/content/overlay.xul
+style	chrome://global/content/customizeToolbar.xul	chrome://xssme/skin/overlay.css
+# *SHOCK* Fx2 and Fx3 are have a moderately different API here's some overriding
+override chrome://xssme/content/preferences.js chrome://xssme/content/preferences.fx2.js appversion<3.0
+override chrome://xssme/content/preferences.js chrome://xssme/content/preferences.fx3.js appversion>=3.0
+
