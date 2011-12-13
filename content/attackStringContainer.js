@@ -42,7 +42,7 @@ AttackStringContainer.prototype.init = function (){
         this.prefDefaultBranch = this.prefService.getDefaultBranch('extensions.xssme.')
         if (this.prefBranch.prefHasUserValue('attacks')){
             attackStrings = this.prefBranch.getCharPref('attacks');
-            this.strings = JSON.fromString(attackStrings);
+            this.strings = JSON.parse(attackStrings);
         }
         else {
             var ioService = Components.classes["@mozilla.org/network/io-service;1"].
@@ -63,7 +63,7 @@ AttackStringContainer.prototype.init = function (){
         
     };
 AttackStringContainer.prototype.save = function() {
-    this.prefBranch.setCharPref('attacks', JSON.toString(this.strings));
+    this.prefBranch.setCharPref('attacks', JSON.stringify(this.strings));
     
 }
 
