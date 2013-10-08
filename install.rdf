@@ -4,7 +4,8 @@
   <Description about="urn:mozilla:install-manifest">
     <em:id>xssme@security.compass</em:id>
     <em:name>XSS Me</em:name>
-    <em:version>0.4.2</em:version>
+    <em:version>0.4.6</em:version>
+    <em:type>2</em:type>
     <em:creator>Security Compass</em:creator>
     <em:description>An extension to test for Cross Site Scripting vulnerabilities</em:description>
     <em:optionsURL>chrome://xssme/content/preferences.xul</em:optionsURL>
@@ -13,7 +14,7 @@
       <Description>
         <em:id>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</em:id> <!-- firefox -->
         <em:minVersion>2.0.0.8</em:minVersion>
-        <em:maxVersion>3.1b3</em:maxVersion>
+        <em:maxVersion>11.*</em:maxVersion>
       </Description>
     </em:targetApplication>
   </Description>

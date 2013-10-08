@@ -26,6 +26,14 @@ tools@securitycompass.com
  * @require Results.js
  */
 
+function xssmeTrimRight( s ) {
+    if ( typeof( String.prototype.trimRight ) === 'undefined' || !String.prototype.trimRight ) {
+        return s.replace( /\s+$/, '' );
+    }
+
+    return s.trimRight();
+}
+
 function checkForVulnerableElement(browser, attackRunner) {
     
     var rv = null;
@@ -53,9 +61,7 @@ function checkForVulnerableElement(browser, attackRunner) {
 function checkForExactAttackText(streamListener){
     
     var rv = null;
-    var grabTextWithOutTrailingWhitespaceRegExp = /^(.*[^\s])\s*$/;
-    var searchString = grabTextWithOutTrailingWhitespaceRegExp.
-            exec(streamListener.attackRunner.testValue.string)[1];
+    var searchString = xssmeTrimRight( streamListener.attackRunner.testValue.string );
     var specials = [
             '/', '.', '*', '+', '?', '|',
             '(', ')', '[', ']', '{', '}', '\\'];
